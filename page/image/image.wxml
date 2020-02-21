@@ -1,0 +1,21 @@
+<!--page/image/image.wxml-->
+
+<!-- 1.image组件：普通使用 可以使用单标签 -->
+<!-- src属性：可以使用绝对路径，也可以使用相对路径和 网络地址 -->
+<image src="https://res.wx.qq.com/wxdoc/dist/assets/img/0.4cb08bb4.jpg" />
+
+<!-- 2.补充：从相册中选择图片 -->
+<button bindtap="handleChooseAlbum">上传图片</button>
+<image src="{{imagePath}}" />
+
+<!-- 3. bindload属性：当图片加载完成触发函数 -->
+<view wx:for="{{10}}">
+  <image bindload="handleImageLoad" 
+         src="https://res.wx.qq.com/wxdoc/dist/assets/img/0.4cb08bb4.jpg" />
+</view>
+
+<!-- 4.lazy-load属性：懒加载 -->
+<image src="https://res.wx.qq.com/wxdoc/dist/assets/img/0.4cb08bb4.jpg" lazy-load />
+
+<!-- 5.show-menu-by-longpress属性：长按图片识别小程序码 -->
+<image show-menu-by-longpress src="https://res.wx.qq.com/wxdoc/dist/assets/img/0.4cb08bb4.jpg" />

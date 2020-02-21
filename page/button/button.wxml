@@ -1,0 +1,23 @@
+<!--page/buttonbutton.wxml-->
+<!-- 1.button的基本使用 -->
+<button>点击</button>
+
+<!-- 2.size属性 -->
+<button size="mini">size</button>
+
+<!-- 3.type属性：按钮的颜色 -->
+<button type="primary" size="mini">绿色</button>
+<button type="default" size="mini">白色</button>
+<button type="warn" size="mini">红色</button>
+
+<!-- 3.plain属性：按钮镂空，背景色透明 -->
+<button type="primary" size="mini" plain>绿色</button>
+
+<!-- 4.disabled属性：禁用按钮 -->
+<button disabled size="mini">禁用</button>
+
+<!-- 5.loading属性：带有loading图标 -->
+<button loading size="mini">加载</button>
+
+<!-- 6.hover-class -->
+<button hover-class="la">红色</button>

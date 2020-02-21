@@ -1,0 +1,9 @@
+/* page/view/view.wxss */
+.al{
+  width: 100px;
+  height: 100px;
+  background-color: red;
+}
+.als{
+  background-color: green;
+}

@@ -1,0 +1,17 @@
+<!--page/view/view.wxml-->
+
+<!-- 1.view的基本使用：块级元素 -->
+<view>哈哈哈</view>
+<view>呵呵呵</view>
+
+<!-- 2.hover-class属性：按下view时的样式 -->
+<view hover-class="als" class="al">点我</view>
+
+<!-- 3.hover-stop-propagation属性：阻止冒泡 -->
+<view hover-stop-propagation>拉拉</view>
+
+<!-- 4.hover-start-time属性：按下过后多久进入被点击状态 如果直接写数字不行就用 {{}} -->
+<view hover-start-time='500' hover-class="als" class="al">点我</view>
+
+<!-- 5.hover-stay-time属性：手指松开过后多久回到默认状态 -->
+<view hover-stay-time="1000"  hover-class="als" class="al">点我</view>

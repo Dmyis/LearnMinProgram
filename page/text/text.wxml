@@ -1,0 +1,12 @@
+<!--page/text/text.wxml-->
+<!--1. 基本使用 -->
+<text selectable>Hello world\n</text>
+<text>你好小程序\n</text>
+
+<!-- 2. 文本空格的大小-->
+<text space="nbsp">hello world\n</text>
+<text space="ensp">hello world\n</text>
+<text space="emsp">hello world\n</text>
+
+<!-- 3.decode属性 是否解码文本-->
+<text decode> 5 &gt; 3</text>

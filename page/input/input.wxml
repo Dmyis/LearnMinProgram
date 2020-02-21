@@ -1,0 +1,35 @@
+<!--page/input/input.wxml-->
+<!-- 1.input组件 普通使用 默认input组件没有边框和背景色，可以为单标签和双标签-->
+<input />
+
+<!-- 2.value属性：文本框默认值 -->
+<input value="我是默认值" />
+
+<!-- 3.type属性：决定用户点击文本框弹出来的键盘类型（文本/数字/身份证等）
+             值：text:文本   number：数字   idcard：身份证   digit:带小数点的数字键盘-->
+<input type="idcard" />
+
+<!-- 4.passworld属性：密码类型暗文 -->
+<input password />
+
+<!-- 5.placeholder属性：文字占位 -->
+<!-- 6.placeholder-style属性：给占位文字设置样式-->
+<!-- 7.placeholder-class属性：给占位文字设置类 -->
+<input placeholder="请输入..." placeholder-style="color:red;"></input>
+
+<!-- 8.disabled属性：禁用文本框 -->
+<input disabled value="我是禁用的" />
+
+<!-- 9.maxlength属性：文本框内容的最大长度   为-1时不限制长度 -->
+<input maxlength="2" placeholder="maxlength"/>
+
+<!-- 文本框事件 -->
+<!-- 10.bindinput事件：键盘输入的时候触发 -->
+<!-- 11.bindfocus事件：文本框聚焦触发 -->
+<!-- 12.bindblur事件：文本框失去焦点触发 -->
+<!-- 13.bindconfirm事件：点击完成（回车）触发 -->
+<input bindinput="handleInput"
+       bindfocus="handleFocus"
+       bindblur="handleBlur"
+       bindconfirm="handleConFirm"
+   />
