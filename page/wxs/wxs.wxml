@@ -1,0 +1,31 @@
+<!--page/wxs/wxs.wxml-->
+<!-- wxs里面不能使用Es6语法，并且要用CommonJs得模块化导出变量，还要给wxs标签设置一个module属性 -->
+<!-- 1.在wxml里面定义， -->
+<!-- <wxs module="info">
+  var name = "Dmyis"
+  var age = "18"
+  var sum = function(num1,num2){
+    return num1+num2;
+  }
+
+  module.exports = {
+    name:name,
+    age:age,
+    sum:sum
+  }
+</wxs> -->
+
+<!-- 2.导入外部wxs: 不能使用绝对路径 -->
+<wxs module="info" src="../../wxs/info.wxs" />
+
+<!-- 使用得时候要用module得名字 -->
+<view>{{info.name}}</view>
+<view>{{info.age}}</view>
+<view>{{info.sum(20,30)}}</view>
+
+
+<!-- 3.wxs的应用 -->
+  <!-- 保留两位小数 -->
+<wxs module="format" src="../../wxs/price.wxs" />
+<view>{{format.priceFormat(price)}}</view>
+

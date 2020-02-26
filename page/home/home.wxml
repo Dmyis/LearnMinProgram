@@ -1,2 +1,54 @@
 <!--page/home/home.wxml-->
 <text class="title">Hello World</text>
+<!-- 显示本地事件 -->
+<view>{{showTime}}</view>
+
+<!-- 切换颜色：绑定class属性 -->
+<button size="mini" bindtap="handleColor">切换颜色</button>
+<view class="hh {{isActive? 'active' :''}}">哈哈</view>
+
+<!-- wx:if -->
+<view wx:if="{{cj >=90}}">优秀</view>
+<view wx:elif="{{cj >=80}}">良好</view>
+<view wx:elif="{{cj >=60}}">及格</view>
+<view wx:else>不及格</view>
+
+<!-- wx:if  和   hidden属性的区别 -->
+  <!-- 
+    使用hidden会把组件渲染出来，但是不显示，后续可以显示出来
+    使用wxif是根本不渲染组件
+    如果切换显示隐藏的频率高：使用hidden
+    如果切换显示隐藏的频率低：使用wx:if
+   -->
+<view>-----------</view>
+<view hidden="{{true}}">我是hidden控制的内容</view>
+<view wx:if="{{false}}">我是wxif控制的内容</view>
+
+
+
+<!-- wx:for 默认列表名字为item和index -->
+<!-- <view wx:for="{{10}}" wx:key="item">{{item}}</view> -->
+
+<!-- wx:for   也可以不使用item，index这个名字 -->
+<!-- <view wx:for="{{10}}" wx:for-item="sc" wx:for-index="i" wx:key="sc">{{sc}}{{i}}</view> -->
+
+<!-- template模板 -->
+<!-- 创建模板 -->
+<!-- <template name="testTemplate">
+  <button size="mini">{{btnText}}</button>
+  <view>{{viewText}}</view>
+</template> -->
+
+<!-- 导入模板 -->
+<import src="/wxml/template.wxml"/>
+
+
+
+<!-- 使用模板 -->
+<include src="/wxml/header.wxml" />   <!-- 导入include板块 -->
+<template is="testTemplate" data="{{btnText:'警告', viewText:'我们都是模板演示  '}}" />
+<template is="testTemplate" data="{{btnText:'提交', viewText:'我是模板  '}}" />
+<include src="/wxml/footer.wxml" />
+
+
+
