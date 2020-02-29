@@ -1,66 +1,52 @@
 // page/home/home.js
 Page({
-
-  /**
-   * 页面的初始数据
-   */
-  data: {
-
+  data:{
+    list:['裤子','衣服','鞋子'],
+    item:""
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-
+  handleBtnClick() {
+    console.log(111)
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
+  handleTouchStart() {
+    console.log("handleTouchStart")
   },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
+  handleTouchMove() {
+    console.log("handleTouchMove")
   },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
+  handleTouchEnd() {
+    console.log("handleTouchEnd")
   },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
+  handleTap() {
+    console.log("handleTap")
   },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
+  handleLongpress() {
+    console.log("handleLongpress")
   },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
+  handleEventClick(e) {
+    console.log(e);
   },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+  handleItemClick(e){
+    console.log(e);
+    this.data.item = e.currentTarget.dataset.index + e.currentTarget.dataset.item;
+    console.log(this.data.item);
+  },
+  // -------事件捕获和冒泡
+  handleCaptureV1() {
+    console.log("handleCaptureV1");
+  },
+  handleBindV1() {
+    console.log("handleBindV1");
+  },
+  handleCaptureV2() {
+    console.log("handleCaptureV2");
+  },
+  handleBindV2() {
+    console.log("handleBindV2");
+  },
+  handleCaptureV3() {
+    console.log("handleCaptureV3");
+  },
+  handleBindV3() {
+    console.log("handleBindV3");
   }
 })
