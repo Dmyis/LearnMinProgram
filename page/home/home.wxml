@@ -1,2 +1,45 @@
 <!--page/home/home.wxml-->
 <text class="title">Hello World</text>
+
+<!-- 1.自定义组件的基本使用 -->
+<!-- <my-cpn />
+<my-cpn />
+<my-cpn />
+<my-cpn /> -->
+
+<!-- 2.给自定义组件传递数据 -->
+<my-props title="哈哈" viewclass="red"/>
+<my-props title="嘿嘿" viewclass="green"/>
+<my-props/>
+
+<!-- 3.组件内部发出事件 -->
+<view>当前个数：{{counter}}</view>
+<my-event bind:Increment="handleIncrement"/>
+
+<!-- 4.tab-control练习 -->
+<tab-control titles="{{['流行','新款','精选']}}" 
+             bind:itemclick="handleTabClick"/>
+<view>{{item}} - {{index}}</view>
+
+<!-- 5.直接选中组件修改数据/调用方法 -->
+<view>-----------外部修改组件中的数据</view> 
+<my-sel id="mysel" />
+<button size="mini" bind:tap="selIncrement">增加组件的数据</button>
+
+<!-- 6.组件的插槽，单个插槽 -->
+<view>---------------------插槽的使用</view>
+<my-slot>
+  <slider></slider>
+  <button size="mini">按钮</button>
+</my-slot>
+
+<!-- 7.多个插槽 -->
+<view>------------------------多个插槽</view>
+<button size="mini" bind:tap="handleShow">切换显示</button>
+<block wx:if="{{isShow}}">
+  <my-mslot>
+    <slider slot="slot1" />
+    <slider slot="slot3" /> 
+    <button size="mini" slot="slot2">哈哈</button>
+  </my-mslot>
+</block>
