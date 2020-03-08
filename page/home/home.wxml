@@ -1,2 +1,18 @@
 <!--page/home/home.wxml-->
-<text class="title">Hello World</text>
+<button>Test</button>
+
+<!-- 1.Tost -->
+<button size="mini" bind:tap="handleToast">Toast</button>
+
+<!-- 2.Modal -->
+<button size="mini" bind:tap="handleModal">Modal</button>
+
+<!-- 3.Loading -->
+<button size="mini" bind:tap="handleLoading">Loading</button>
+
+<!-- 4.ActionSheet -->
+<button size="mini" bind:tap="handleActionSheet">ActionSheet</button>
+
+<!-- 5.分享 -->
+<button size="mini" open-type="share">分享</button>
+

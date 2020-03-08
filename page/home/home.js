@@ -1,66 +1,73 @@
 // page/home/home.js
 Page({
-
-  /**
-   * 页面的初始数据
-   */
-  data: {
-
+  handleToast() {
+    wx.showToast({
+      title: '加载中...',
+      icon: 'loading',
+      duration: 1500,
+      mask: true,
+      success: ()=>{
+        console.log("成功调用Toast")
+      },
+      fail: ()=>{
+        console.log("调用失败");
+      },
+      complete: ()=>{
+        console.log("调用结束");
+      }
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-
+  handleModal() {
+    wx.showModal({
+      title: '标题',
+      content: '内容，好好好',
+      showCancel: true,
+      cancelColor: 'red',
+      cancelText: '退出',
+      confirmColor: 'green',
+      confirmText: '知道了',
+      success: res =>{
+        if(res.cancel){
+          console.log("用户取消了")
+        }
+        if(res.confirm){
+          console.log("确认了")
+        }
+      },
+      fail: ()=>{},
+      complete: ()=>{}
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
+  handleLoading() {
+    wx.showLoading({
+      title: '加载ing..',
+      mask: true,
+      success: res =>{
+        console.log(res)
+      },
+      fail: ()=>{},
+      complete: ()=>{}
+    }),
+    setTimeout(()=>{
+      wx.hideLoading();
+    },1000)
   },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
+  handleActionSheet() {
+    wx.showActionSheet({
+      itemList: ['相册','拍照'],
+      itemColor: 'red',
+      success: res =>{
+        console.log(res)
+      },
+      fail: ()=>{},
+      complete: ()=>{ }
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+  onShareAppMessage: function(optios){
+    return {
+      title: '你好,我的小宝贝',
+      path: '/page/home/home.wxml ',
+      imageUrl: 'http://s11.mogucdn.com/p2/170301/106341701_4kfgdd3001475k8h1l365al2k5ed6_640x960.jpg_320x999.jpg'
+    }
   }
 })
