@@ -1,2 +1,19 @@
 <!--page/home/home.wxml-->
 <text class="title">Hello World</text>
+
+<!-- 1.跳转页面navigator -->
+<navigator url="/page/detail/detail">跳转到详情页</navigator>
+
+<!-- 2.navigator属性：open-type -->
+<navigator url="/page/detail/detail" open-type="redirect">跳转到详情页（redirect）</navigator>
+<navigator url="/page/about/about" open-type="switchTab">跳转到关于页（switchTab）</navigator>
+<navigator url="/page/detail/detail" open-type="reLaunch">跳转到详情页（reLaunch）</navigator>
+
+<!-- 3.跳转过程中正面传递数据 -->
+<navigator url="/page/detail/detail?name=dmyis&age=18&height=182">跳转到详情页带数据</navigator>
+
+<!-- 反面传递数据 -->
+<view>{{title}}</view>
+
+<!-- 4.使用代码跳转页面 -->
+<button size="mini" bind:tap="handleNavigator">跳转到评论页(带数据)</button>
